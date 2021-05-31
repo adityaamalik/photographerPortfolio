@@ -1,0 +1,28 @@
+<%- include('partials/mainheader.ejs') -%>
+<!-- Gallery section -->
+<section class="gallery-section">
+  <div class="row gallery-gird">
+    <% items.forEach(function(image) { %>
+      <div class="col-lg-4 col-xl-3 col-sm-6">
+        <a class="gallery-item fresco" href="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" data-fresco-group="projects">
+          <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>" style="width:100%">
+          <div class="gi-text">
+            <h4><%= image.name %></h4>
+            <p><%= image.desc %> </p>
+          </div>
+        </a>
+      </div>
+    <% }) %>
+  </div>
+  <!-- <div class="text-center pt-5">
+    <button class="site-btn">Load More</button>
+  </div> -->
+</section>
+<!-- Gallery section end -->
+
+   
+
+
+
+<%- include('partials/mainfooter.ejs') -%> 
+
